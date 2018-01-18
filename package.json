@@ -3,6 +3,7 @@
     "description": "Simple Hello World Node.js sample",
     "version": "0.0.1",
     "private": true,
+    "encoding": "utf-8",
     "engines": {
         "node": ">=6.9.1"
     },
