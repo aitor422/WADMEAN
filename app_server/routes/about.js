@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+var mainController = require('../Controllers/main');
+
 /* GET about page. */
-router.get('/', function(req, res, next) {
-  res.send('My first route works!');
-});
+router.get('/', mainController.about);
 
 module.exports = router;
