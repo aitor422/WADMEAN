@@ -1,0 +1,7 @@
+extends layout
+
+block content
+     h1= title
+     ul
+     each study in studies
+          li #[strong #{study.name}:] #{study.description} (#{study.years})

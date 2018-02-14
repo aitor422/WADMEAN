@@ -1,0 +1,8 @@
+extends layout
+
+block content
+     h1= title
+     ul
+          each skill in skills
+               li #[strong #{skill.name}:] #{skill.description}.
+          

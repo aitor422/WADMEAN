@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var mainController = require('../Controllers/main');
+const mainController = require('../controllers/main');
+const studiesController = require('../controllers/studies');
+const skillsController = require('../controllers/skills');
+const aboutController = require('../controllers/about');
 
 /* GET home page. */
-router.get('/', mainController.index);
+router.get('/', mainController.index); // Home page
+router.get('/studies', studiesController.studies); // studies Page
+router.get('/skills', skillsController.skills); //Skills page
+router.get('/about', aboutController.about); // about page
+
 
 module.exports = router;
