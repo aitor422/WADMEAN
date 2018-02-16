@@ -37,13 +37,13 @@ html
           .container
                block content
 
-               footer
-                    .fixed-bottom
-                         ul.nav.justify-content-end
-                              li.nav-item.text-sm-center.flex-sm-fill 
-                                   a.nav-link(href='https://www.linkedin.com/in/aitor-chordá-65ba13111') LinkedIn
-                              li.nav-item.text-sm-center.flex-sm-fill  
-                                   a.nav-link(href=currenturl onclick='changeLanguage()') #{__('ver en castellano')}
+          footer
+               .fixed-bottom
+                    ul.nav.justify-content-end
+                         li.nav-item.text-sm-center.flex-sm-fill 
+                              a.nav-link(href='https://www.linkedin.com/in/aitor-chordá-65ba13111') LinkedIn
+                         li.nav-item.text-sm-center.flex-sm-fill  
+                              a.nav-link(href=currenturl onclick='changeLanguage()') #{__('ver en castellano')}
 
           script.
                function get_cookie (cookie_name) {
