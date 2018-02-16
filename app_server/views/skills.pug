@@ -2,7 +2,7 @@ extends layout
 
 block content
      h1= title
-     ul
+     ul.list-group.list-group-flush
           each skill in skills
-               li #[strong #{skill.name}:] #{skill.description}.
+               li.list-group-item #[strong #{skill.name}:] #{skill.description}.
           

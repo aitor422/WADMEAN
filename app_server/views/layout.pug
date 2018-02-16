@@ -8,32 +8,31 @@ html
           link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
      body
           nav.navbar.navbar-expand-lg.bg-light.navbar-light
-               .container
-                    ul.navbar-nav
-                         - if (title.localeCompare('Aitor Chordá Reta')==0)
-                              li.nav-item.active
-                                   a.nav-link(href="/") #{__('Home')}
-                         -else
-                              li.nav-item
-                                   a.nav-link(href="/") #{__('Home')}
-                         - if (title.localeCompare(__('Studies'))==0)
-                              li.nav-item.active
-                                   a.nav-link(href="/studies") #{__('Studies')}
-                         -else
-                              li.nav-item
-                                   a.nav-link(href="/studies") #{__('Studies')}
-                         - if (title.localeCompare(__('Skills'))==0)
-                              li.nav-item.active
-                                   a.nav-link(href="/skills") #{__('Skills')}
-                         -else
-                              li.nav-item
-                                   a.nav-link(href="/skills") #{__('Skills')}
-                         - if (title.localeCompare(__('About'))==0)
-                              li.nav-item.active
-                                   a.nav-link(href="/about") #{__('About')}
-                         -else
-                              li.nav-item
-                                   a.nav-link(href="/about") #{__('About')}
+               ul.navbar-nav
+                    - if (title.localeCompare('Aitor Chordá Reta')==0)
+                         li.nav-item.active
+                              a.nav-link(href="/") #{__('Home')}
+                    -else
+                         li.nav-item
+                              a.nav-link(href="/") #{__('Home')}
+                    - if (title.localeCompare(__('Studies'))==0)
+                         li.nav-item.active
+                              a.nav-link(href="/studies") #{__('Studies')}
+                    -else
+                         li.nav-item
+                              a.nav-link(href="/studies") #{__('Studies')}
+                    - if (title.localeCompare(__('Skills'))==0)
+                         li.nav-item.active
+                              a.nav-link(href="/skills") #{__('Skills')}
+                    -else
+                         li.nav-item
+                              a.nav-link(href="/skills") #{__('Skills')}
+                    - if (title.localeCompare(__('About'))==0)
+                         li.nav-item.active
+                              a.nav-link(href="/about") #{__('About')}
+                    -else
+                         li.nav-item
+                              a.nav-link(href="/about") #{__('About')}
                               
           .container
                block content
@@ -41,8 +40,10 @@ html
                footer
                     .fixed-bottom
                          ul.nav.justify-content-end
-                              li.nav-item.col-2 #{__('Connect with me on')} #[a(href='https://www.linkedin.com/in/aitor-chordá-65ba13111') LinkedIn]
-                              li.nav-item.col-2 #[a(href=currenturl onclick='changeLanguage()') #{__('ver en castellano')}]
+                              li.nav-item.text-sm-center.flex-sm-fill 
+                                   a.nav-link(href='https://www.linkedin.com/in/aitor-chordá-65ba13111') LinkedIn
+                              li.nav-item.text-sm-center.flex-sm-fill  
+                                   a.nav-link(href=currenturl onclick='changeLanguage()') #{__('ver en castellano')}
 
           script.
                function get_cookie (cookie_name) {
