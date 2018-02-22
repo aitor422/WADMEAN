@@ -36,11 +36,10 @@ html
           +navbar
           
           main.container(role="main")
-               .container
-                    block content
+               block content
 
           footer
-               .fixed-bottom
+               .fixed-bottom.bg-light
                     ul.nav.justify-content-end
                          li.nav-item.text-sm-center.flex-sm-fill 
                               a.nav-link(href='https://www.linkedin.com/in/aitor-chordá-65ba13111') LinkedIn
@@ -48,7 +47,7 @@ html
                               a.nav-link(href=currenturl onclick='changeLanguage()') #{__('ver en castellano')}
 
           // language change functions
-          script(src="/javascripts/changeLanguage.js")
+          script(src="/javascripts/languageChange.js")
           
           // Bootstrap scripts
           script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
