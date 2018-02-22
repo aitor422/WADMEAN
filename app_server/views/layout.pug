@@ -1,39 +1,40 @@
 mixin navbar
-     nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
-          a.navbar-brand(href="/") #{__('Home')}
-          button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01")
-               span.navbar-toggler-icon
-          div(id="navbars01").collapse.navbar-collapse
-               ul.navbar-nav.mr-auto
-                    - if (title.localeCompare(__('Studies'))==0)
-                         li.nav-item.active
-                              a.nav-link(href="/studies") #{__('Studies')}
-                    -else
-                         li.nav-item
-                              a.nav-link(href="/studies") #{__('Studies')}
-                    - if (title.localeCompare(__('Skills'))==0)
-                         li.nav-item.active
-                              a.nav-link(href="/skills") #{__('Skills')}
-                    -else
-                         li.nav-item
-                              a.nav-link(href="/skills") #{__('Skills')}
-                    - if (title.localeCompare(__('About'))==0)
-                         li.nav-item.active
-                              a.nav-link(href="/about") #{__('About')}
-                    -else
-                         li.nav-item
-                              a.nav-link(href="/about") #{__('About')}
+     a.navbar-brand(href="/") #{__('Home')}
+     button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars01")
+          span.navbar-toggler-icon
+     div(id="navbars01").collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+               - if (title.localeCompare(__('Studies'))==0)
+                    li.nav-item.active
+                         a.nav-link(href="/studies") #{__('Studies')}
+               -else
+                    li.nav-item
+                         a.nav-link(href="/studies") #{__('Studies')}
+               - if (title.localeCompare(__('Skills'))==0)
+                    li.nav-item.active
+                         a.nav-link(href="/skills") #{__('Skills')}
+               -else
+                    li.nav-item
+                         a.nav-link(href="/skills") #{__('Skills')}
+               - if (title.localeCompare(__('About'))==0)
+                    li.nav-item.active
+                         a.nav-link(href="/about") #{__('About')}
+               -else
+                    li.nav-item
+                         a.nav-link(href="/about") #{__('About')}
+                         
 doctype html
 html(lang=__('htmllang'))
 html
      head
           title= title
           meta(charset="utf-8")
-          meta(name+"viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+          meta(name+"viewport", content="width=device-width, shrink-to-fit=no")
           link(rel='stylesheet', href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
           link(rel='stylesheet', href='/stylesheets/style.css')
      body
-          +navbar
+          nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+               +navbar
           
           main.container(role="main")
                block content
