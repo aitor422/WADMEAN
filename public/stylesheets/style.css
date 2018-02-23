@@ -1,11 +1,31 @@
 /************************
   * Padding for fixed bar *
   ************************/
+
 body {
-  padding-bottom:  4.5rem;
-  padding-top: 4.5rem;
+     background-attachment: fixed;
+     background-image: url("/images/backgroundImage.jpg");
+     background-position: center;
+     background-size: contain;
+     height: 10000px;
+     overflow: hidden;
+}
+
+.container {
+     min-height: 100%;
+     opacity: 0.9;
+     padding-bottom: 4.5rem;
+     padding-top: 4.5rem;
 }
 
 .index-image {
      width: 200px;
+}
+
+.bg-light-gray {
+     background-color: #ccc
+}
+
+.bg-lighter-gray {
+     background-color: #eee
 }
