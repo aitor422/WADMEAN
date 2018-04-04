@@ -38,6 +38,7 @@ const skills = function(req, res) {
                          message: 'No documents in collection'
                     });
                } else {
+                    translateBody(body, res);
                     res.render('skills', {
                          title: res.__('Skills'),
                          currenturl: '/skills',
@@ -46,6 +47,13 @@ const skills = function(req, res) {
                }
           }
      );
+}
+
+function translateBody(body, res) {
+     body.forEach(function(part, index, arr) {
+          arr[index].name = res.__(arr[index].name);
+          arr[index].description = res.__(arr[index].description);
+     });
 }
 
 module.exports = {
