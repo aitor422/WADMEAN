@@ -16,21 +16,25 @@ const studies = function(req, res) {
                if (err) {
                     res.render('error', {
                          title: 'error',
+                         currenturl: '/',
                          message: err.message
                     });
                } else if (response.statusCode != 200) {
                     res.render('error', {
                          title: 'error',
+                         currenturl: '/',
                          message: 'Error accessing API: ' + response.statusMessage + " (" + response.statusCode + ')'
                     });
                } else if (!(body instanceof Array)) {
                     res.render('error', {
                          title: 'error',
+                         currenturl: '/',
                          message: 'Unexpected return data'
                     });
                } else if (!body.length) {
                     res.render('error', {
                          title: 'error',
+                         currenturl: '/',
                          message: 'No documents in collection'
                     });
                } else {
