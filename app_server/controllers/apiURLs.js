@@ -3,7 +3,7 @@ const apiURL = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-     apiURL.server = 'https://http://chorda-aitor.azurewebsites.net';
+     apiURL.server = 'https://chorda-aitor.azurewebsites.net';
 }
 
 module.exports = apiURL;
