@@ -1,29 +1,47 @@
+const request = require('request');
+const apiURL = require('./apiURLs')
+
 const studies = function(req, res) {
-     res.render('studies', {
-          title: res.__('Studies'),
-          currenturl: '/studies',
-          studies: [{
-                    name: res.__('High School'),
-                    description: 'Sancho III el Mayor',
-                    years: '2008 - 2014'
-               },
-               {
-                    name: res.__('Computer Science'),
-                    description: 'Universidad Pública de Navarra',
-                    years: '2014 - 2018'
-               },
-               {
-                    name: res.__('Business Information Technology'),
-                    description: 'Laurea University of Applied Sciences',
-                    years: '2018'
-               },
-               {
-                    name: res.__('Professional Music Learnings - Hautbois'),
-                    description: 'Conservatorio Profesional de Música Pablo Sarasate',
-                    years: '2014 - 2020'
+     const path = '/api/studies';
+     const requestOptions = {
+          url: apiURL.server + path,
+          method: 'GET',
+          json: {},
+          qs: {}
+     };
+
+     request(
+          requestOptions,
+          function(err, response, body) {
+               if (err) {
+                    res.render('error', {
+                         title: 'error',
+                         message: err.message
+                    });
+               } else if (response.statusCode != 200) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'Error accessing API: ' + response.statusMessage + " (" + response.statusCode + ')'
+                    });
+               } else if (!(body instanceof Array)) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'Unexpected return data'
+                    });
+               } else if (!body.length) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'No documents in collection'
+                    });
+               } else {
+                    res.render("studies", {
+                         title: res.__('Studies'),
+                         currenturl: '/studies',
+                         studies: body
+                    });
                }
-          ]
-     });
+          }
+     );
 }
 
 module.exports = {

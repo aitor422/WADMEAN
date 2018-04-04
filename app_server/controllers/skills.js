@@ -1,33 +1,47 @@
+const request = require('request');
+const apiURL = require('./apiURLs')
+
 const skills = function(req, res) {
-     res.render('skills', {
-          title: res.__('Skills'),
-          currenturl: '/skills',
-          skills: [{
-                    name: res.__('OOP'),
-                    description: res.__('Java,  PHP, Python')
-               },
-               {
-                    name: res.__('Web Development'),
-                    description: res.__('LAMP and MEAN')
-               },
-               {
-                    name: res.__('Data Base Management'),
-                    description: res.__('Relational and no-SQL')
-               },
-               {
-                    name: res.__('Imperative programming'),
-                    description: res.__('C, Pascal')
-               },
-               {
-                    name: res.__('Languages'),
-                    description: res.__('Spanish (mother tongue), English')
-               },
-               {
-                    name: res.__('Music'),
-                    description: res.__('Good level guitar, advanced level hautbois, low level piano')
+     const path = '/api/skills';
+     const requestOptions = {
+          url: apiURL.server + path,
+          method: 'GET',
+          json: {},
+          qs: {}
+     };
+
+     request(
+          requestOptions,
+          function(err, response, body) {
+               if (err) {
+                    res.render('error', {
+                         title: 'error',
+                         message: err.message
+                    });
+               } else if (response.statusCode != 200) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'Error accessing API: ' + response.statusMessage + " (" + response.statusCode + ')'
+                    });
+               } else if (!(body instanceof Array)) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'Unexpected return data'
+                    });
+               } else if (!body.length) {
+                    res.render('error', {
+                         title: 'error',
+                         message: 'No documents in collection'
+                    });
+               } else {
+                    res.render('skills', {
+                         title: res.__('Skills'),
+                         currenturl: '/skills',
+                         skills: body
+                    });
                }
-          ]
-     });
+          }
+     );
 }
 
 module.exports = {
