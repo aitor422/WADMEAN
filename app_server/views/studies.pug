@@ -4,4 +4,4 @@ block content
      h1= title
      ul.list-group.list-group-flush
           each study in studies
-               li.list-group-item #[strong #{study.name}:] #{study.description} (#{study.years})
+               li.list-group-item #[strong #{__(study.name)}:] #{__(study.description)} (#{study.years})

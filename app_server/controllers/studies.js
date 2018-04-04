@@ -38,7 +38,6 @@ const studies = function(req, res) {
                          message: 'No documents in collection'
                     });
                } else {
-                    translateBody(body, res);
                     res.render("studies", {
                          title: res.__('Studies'),
                          currenturl: '/studies',
@@ -47,12 +46,6 @@ const studies = function(req, res) {
                }
           }
      );
-}
-
-function translateBody(body, res) {
-     body.forEach(function(part, index, arr) {
-          arr[index].name = res.__(arr[index].name);
-     });
 }
 
 module.exports = {
