@@ -1,4 +1,5 @@
 {
+	"1": "1",
 	"Home": "Inicio",
 	"Studies": "Estudios",
 	"Skills": "Aptitudes",
@@ -15,7 +16,7 @@
 	"C, Pascal": "C, Pascal",
 	"Languages": "Idiomas",
 	"Spanish (mother tongue), English": "Español (lengua materna), Inglés",
-	"Music": "Music",
+	"Music": "Música",
 	"Good level guitar, advanced level hautbois, low level piano": "Buen nivel de guitarra, nivel avanzado de oboe, poco nivel de piano",
 	"High School": "Instituto",
 	"Computer Science": "Ingeniería Informática",
@@ -27,5 +28,11 @@
 	"Sancho III el Mayor": "Sancho III el Mayor",
 	"Universidad Pública de Navarra": "Universidad Pública de Navarra",
 	"Laurea University of Applied Sciences": "Laurea University of Applied Sciences",
-	"Conservatorio Profesional de Música Pablo Sarasate": "Conservatorio Profesional de Música Pablo Sarasate"
+	"Conservatorio Profesional de Música Pablo Sarasate": "Conservatorio Profesional de Música Pablo Sarasate",
+	"Add new skill": "Añade una nueva aptitud",
+	"Add": "Añadir",
+	"Name": "Nombre",
+	"Description": "Descripción",
+	"aa": "aa",
+	"a": "a"
 }

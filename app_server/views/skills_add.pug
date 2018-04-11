@@ -1,0 +1,14 @@
+extends layout
+
+block content
+     h1=title
+     .mr-3
+          form(action="", method="post").ml-3
+               .form-group.row
+                    label #{__('Name')}
+                         input.form-control(name='name')
+               .form-group.row
+                    label #{__('Description')}
+                         input.form-control(name='description')
+               .form-group.row
+                    button.btn-primary #{__('Add')}

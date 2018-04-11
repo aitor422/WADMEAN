@@ -46,8 +46,47 @@ const skills = function(req, res) {
                }
           }
      );
+};
+
+const showForm = function(req, res) {
+     res.render('skills_add', {
+          title: res.__('Add') + " " + res.__('Skills'),
+          currenturl: '/skills/add'
+     });
+};
+
+const addData = function(req, res) {
+     const path = '/api/skills';
+
+     const postdata = {
+          name: req.body.name,
+          description: req.body.description
+     };
+
+     const requestOptions = {
+          url : apiURL.server + path,
+          method : 'POST',
+          json : postdata
+     };
+
+     request (
+          requestOptions,
+          function (err, response) {
+               if (response.statusCode === 201) {
+                    res.redirect('/skills');
+               } else {
+                    res.render('error', {
+                         title: 'error',
+                         currenturl: '/error',
+                         message: res.__('Error adding data: ') + response.statusMessage + ' (' + response.statusCode + ')'
+                    });
+               }
+          }
+     );
 }
 
 module.exports = {
-     skills
+     skills,
+     showForm,
+     addData
 };

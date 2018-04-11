@@ -5,4 +5,4 @@ block content
      ul.list-group.list-group-flush
           each skill in skills
                li.list-group-item #[strong #{__(skill.name)}:] #{__(skill.description)}.
-          
+     a(href='/skills/add') #{__('Add new skill')}
