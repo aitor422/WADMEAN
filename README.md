@@ -4,7 +4,7 @@ This is website was developed for the course Web App Development with MEAN (2017
 It has been developed using the express.js framework in node.js with MLab as a NoSQL database.
 
 ## Usage
-See the [wiki](https://github.com/aitor422/wiki/usage)
+See the [wiki](https://github.com/aitor422/WADMEAN/wiki/usage)
 
 ## Author
 [Aitor Chordá Reta](https://github.com/aitor422)
